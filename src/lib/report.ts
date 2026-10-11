@@ -287,6 +287,8 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 2200000, byDate: { "2026-10-11": "https://www.instagram.com/reel/DeWwnO2Te9O/?cplk=MTVnZ3YxeWhmczc3dA==" } },
   { followers: 1600000, byDate: { "2026-10-11": "https://www.instagram.com/reel/DeWYWmWyrEi/?utm_source=ig_web_copy_link&psln=NTc4MTIwNjQ2YQ==" } },
   { followers: 421000, byDate: { "2026-10-11": "https://www.instagram.com/reel/DeWfohHJlCw/?utm_source=ig_web_copy_link&cplk=NTc4MTIwNjQ2YQ==" } },
+  { followers: 131000, byDate: { "2026-10-11": "https://www.instagram.com/reel/DeXCyomtou-/?utm_source=ig_web_copy_link&exln=NTc4MTIwNjQ2YQ==" } },
+  { followers: 43400, byDate: { "2026-10-11": "https://www.instagram.com/reel/DeW_wjZKNK3/?utm_source=ig_web_copy_link&srtk=NTc4MTIwNjQ2YQ==" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
@@ -426,10 +428,13 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DeWVydThmnd/",
       "https://www.instagram.com/reel/DeWIbuUzvdh/",
       "https://www.instagram.com/reel/DeW4_vpImsK/?srtk=MXFzand0b3UxeGR4Yw==",
+      "https://www.instagram.com/reel/DeXAHmHyk0d/",
+      "https://www.instagram.com/reel/DeXAiR3S6wt/",
       "https://www.instagram.com/reel/DeW5WLCSS6A/?dlrf=MXA0b2FrN2p2dXliaA==",
       "https://www.instagram.com/p/DeW71TgBu58/?xtok=bm1ndjZ5ZW1iang0",
       "https://www.instagram.com/reel/DeW4IA1h639/?psln=MTNjZWwxdm05NXF4",
       "https://www.instagram.com/p/DeW4xy2Em1K/?exln=ZWNmNmpnbnc0ZnUy",
+      "https://www.instagram.com/p/DeXA5YYqRtU/?psln=bWlxYjB5d3I0N3Yw",
       "https://www.instagram.com/p/DeW6Q8tTHyx/?obrf=MTgyeGNka2F0N2lobw==",
       "https://www.instagram.com/p/DeW6PPfT2eb/?mdxt=MWNqb3YzdDBxbHcybg==",
       "https://www.instagram.com/p/DeW6ZRTTJiq/?dlrf=N3JyZmJvOTJnODYw",
@@ -437,6 +442,7 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/p/DeW6huyjG1f/?dlrf=MWtqM3Y2Ymo0N2UxNw==",
       "https://www.instagram.com/reel/DeW3FeMo6bi/?exln=b3VjdGh6YjNsMTdi",
       "https://www.instagram.com/reel/DeW0OMVuQ7d/?vrfl=M3Ntdm9lcTIxbXc5",
+      "https://www.instagram.com/reel/DeXErRLO9zn/?obrf=cm9yNmF2MjFnZjJq",
       "https://www.instagram.com/p/DeWIqCNR6B0/?srtk=MWYxcTkwMmhveTR0bw==",
       "https://www.instagram.com/p/DeWI_VLyZ30/",
       "https://www.instagram.com/p/DeWIyaZCmY3/",
@@ -448,6 +454,7 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/p/DeWJ5dGhPtH/",
       "https://www.instagram.com/reel/DeW6DMoITEn/?rpxt=MXcwcms0M3hwaHJwZw==",
       "https://www.instagram.com/reel/DeW9T16pNIl/?vrfl=azg3bXQxNW0weTQ2",
+      "https://www.instagram.com/reel/DeW__yGBSff/?obrf=Y2VqcWwwM29sOWhx",
       "https://www.instagram.com/reel/DeW7Wbts_Jd/?exln=dnoxZG43a282a21v",
       "https://www.instagram.com/reel/DeW7Mf1M-bU/?psln=Y3N1bGxjNmVnanlj"
     ],
