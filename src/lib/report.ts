@@ -465,12 +465,27 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
   "2026-10-12": {
     premium: [],
     meme: [
+      "https://www.instagram.com/reel/DeY_x2RJZh0/?vrfl=ejUybnBpdmNjemVy",
+      "https://www.instagram.com/reel/DeY_ZpLBxhH/?exln=M2RtbnJ1MnYyZWx2",
+      "https://www.instagram.com/reel/DeZAI-mBnbl/?psln=emtzdWV2MWxmMXpq",
+      "https://www.instagram.com/reel/DeY_cDfy8ej/?xtok=MTMxdm13Ymx2N256ZA==",
+      "https://www.instagram.com/reel/DeY_oy2T84Q/?obrf=MWR5YWQxNHFyMjJsMQ==",
+      "https://www.instagram.com/reel/DeY_25uow7c/?obrf=MWVrcng2OWxrNTlybA==",
+      "https://www.instagram.com/reel/DeY_Dpkzj62/?vrfl=MTU4Z2VlOGh0aXJ4Mg==",
+      "https://www.instagram.com/reel/DeY7r1LsLZI/?exln=cTQycThrY2ZsMDhi",
+      "https://www.instagram.com/reel/DeY7XO3BEB2/?dlrf=MWk1ZnE2NHB2dDdxeA==",
       "https://www.instagram.com/reel/DeYmpMXSLho/?mdxt=ZnB4YnJjM3E3bzk3",
       "https://www.instagram.com/reel/DeYmak8MXKa/?psln=amI1aXU2djZ6Z3dx",
       "https://www.instagram.com/reel/DeYl4mspFM6/?cplk=MWw0eWRob2tkenc5NA==",
+      "https://www.instagram.com/reel/DeYq8IWtnXb/?srtk=dzU2MHJmMGhsbTJ2",
       "https://www.instagram.com/reel/DeYp8tct4Wi/?dlrf=MWFuOTBicDhrN3BpZg=="
     ],
-    political: [],
+    political: [
+      "https://www.instagram.com/reel/DeY0pgbBu7V/?obrf=MTJpb3gxeDZkaHB2cQ==",
+      "https://www.instagram.com/reel/DeYrJh_HCCV/?exln=aXZjd2ExMWU1N3E4",
+      "https://www.instagram.com/reel/DeYq4LxSx-E/?cplk=aDJqa3Y0ODR6Nm9i",
+      "https://www.instagram.com/reel/DeYrPLxBM-o/?rpxt=bXpkc2xlM2p0NXdh"
+    ],
   }
 };
 
