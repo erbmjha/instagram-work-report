@@ -528,11 +528,25 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DeZJu6DIVNj/?mdxt=b2JvZmc3ZHhzNnN2",
       "https://www.instagram.com/reel/DeZEa0Khq_x/?srtk=aDJ4eTBzbHB4b245",
       "https://www.instagram.com/reel/DeY_5V0T7ul/?psln=ZTgxenY4MXc2cW5w",
+      "https://www.instagram.com/reel/DeZPw1ioeGE/?mdxt=b2wzYm1tam53cDk2",
+      "https://www.instagram.com/reel/DeZPnthSt2h/?psln=ZmxtOHR5NmJsczVn",
+      "https://www.instagram.com/reel/DeZQiLKhYi-/?vrfl=NTBveW5taDF0ZGpw",
+      "https://www.instagram.com/reel/DeZP8bATRsv/?obrf=MTduYWQxZng2ZXc2cQ==",
+      "https://www.instagram.com/reel/DeZQ03NhyeQ/?psln=NmYzYTNsdmo4NGdn",
+      "https://www.instagram.com/reel/DeZUKwFoYzb/?xtok=MXB3amVtaGxnYzg4Zg==",
+      "https://www.instagram.com/p/DeZTz2Fq90Z/?cplk=aDQwbTRzZHd6bjQ=",
+      "https://www.instagram.com/p/DeZS3CrKoVU/?rpxt=MWtjaWJlNG8yend2Mg==",
+      "https://www.instagram.com/reel/DeZUIuXuMVd/?dlrf=MWFoNWdiZWVyeHRvNg==",
+      "https://www.instagram.com/reel/DeZVxP8zVfx/?xtok=MTkxcjA0c29zbzcwYw==",
+      "https://www.instagram.com/reel/DeZT_P0TWps/?dlrf=eXBtems3cjNwNjgz",
+      "https://www.instagram.com/reel/DeZW5Hvq_ka/?psln=c3Z5cWN6d2k4MzM0",
+      "https://www.instagram.com/reel/DeZTxAXKuOC/?xtok=ZHU3ZWJ5Zmo3emY3",
       "https://www.instagram.com/reel/DeY0pgbBu7V/?obrf=MTJpb3gxeDZkaHB2cQ==",
       "https://www.instagram.com/reel/DeY-2GeOjVS/?rpxt=MWwyeDZkZ3V4enk4ZQ==",
       "https://www.instagram.com/reel/DeYrJh_HCCV/?exln=aXZjd2ExMWU1N3E4",
       "https://www.instagram.com/reel/DeYq4LxSx-E/?cplk=aDJqa3Y0ODR6Nm9i",
-      "https://www.instagram.com/reel/DeYrPLxBM-o/?rpxt=bXpkc2xlM2p0NXdh"
+      "https://www.instagram.com/reel/DeYrPLxBM-o/?rpxt=bXpkc2xlM2p0NXdh",
+      "https://www.instagram.com/reel/DeZkSzny2Ry/?xtok=YTcxZWlmazAxNHBl"
     ],
   }
 };
