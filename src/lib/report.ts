@@ -472,6 +472,7 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DeY_cDfy8ej/?xtok=MTMxdm13Ymx2N256ZA==",
       "https://www.instagram.com/reel/DeY_oy2T84Q/?obrf=MWR5YWQxNHFyMjJsMQ==",
       "https://www.instagram.com/reel/DeY_25uow7c/?obrf=MWVrcng2OWxrNTlybA==",
+      "https://www.instagram.com/reel/DeY_25uow7c/?obrf=MWVrcng2OWxrNTlybA==",
       "https://www.instagram.com/reel/DeY_Dpkzj62/?vrfl=MTU4Z2VlOGh0aXJ4Mg==",
       "https://www.instagram.com/reel/DeY7r1LsLZI/?exln=cTQycThrY2ZsMDhi",
       "https://www.instagram.com/reel/DeY7XO3BEB2/?dlrf=MWk1ZnE2NHB2dDdxeA==",
