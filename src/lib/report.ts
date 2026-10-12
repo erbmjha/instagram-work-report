@@ -247,7 +247,7 @@ function cleanUrl(url: string): string {
 }
 
 export function shortcode(url: string): string | null {
-  const match = url.match(/instagram\.com\/(?:reel|p|tv)\/([A-Za-z0-9_-]+)/i);
+  const match = url.match(/instagram\.com\/(?:reels|reel|p|tv)\/([A-Za-z0-9_-]+)/i);
   return match ? match[1] : null;
 }
 
@@ -292,6 +292,7 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 32100, byDate: { "2026-10-11": "https://www.instagram.com/reel/DeXF7ISSgkJ/?" } },
   { followers: 30200, byDate: { "2026-10-11": "https://www.instagram.com/reel/DeXKCu1TG_H/?dlrf=MTk4Y2c0bW41ZnR5OQ==" } },
   { followers: 74200, byDate: { "2026-10-11": "https://www.instagram.com/reel/DeXJ-q5zSwp/?utm_source=ig_web_copy_link&cplk=NTc4MTIwNjQ2YQ==" } },
+  { followers: 67100, byDate: { "2026-10-12": "https://www.instagram.com/reels/DeYfHVtRRLj/" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
