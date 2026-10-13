@@ -474,6 +474,17 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DeW7Mf1M-bU/?psln=Y3N1bGxjNmVnanlj"
     ],
   },
+  "2026-10-13": {
+    premium: [],
+    meme: [
+      "https://www.instagram.com/reel/DebgRXqzOzx/?cplk=cTJobGM0eDdydjhy",
+      "https://www.instagram.com/reel/Debfdhnz2w_/?rpxt=MWxjbHc2d3dsNmlsMg==",
+      "https://www.instagram.com/reel/DebgGXIMfMx/?exln=ZXVzcjhydXlhY2No",
+      "https://www.instagram.com/reel/DebfjIoTEwb/?exln=MWdnMmRwc2ppcjFscw==",
+      "https://www.instagram.com/reel/Debft5ABMUM/?obrf=MW85Y3FmMXJxNDJ3Mw=="
+    ],
+    political: [],
+  },
   "2026-10-12": {
     premium: [
       "https://www.instagram.com/reel/DeZcmZcz2Rc/?srtk=MzkzOG5kbjIxM2I=",
