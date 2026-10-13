@@ -554,6 +554,7 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/Deb3cZshLn7/",
       "https://www.instagram.com/reel/DecBudEJwtP/",
       "https://www.instagram.com/reel/DecJccwqbf4/",
+      "https://www.instagram.com/reel/DecakcMz7u3/",
       "https://www.instagram.com/reel/DecC5-wK7Qs/",
       "https://www.instagram.com/reel/DecCXiJTspo/",
       "https://www.instagram.com/reel/DecCiNmqQns/",
