@@ -397,9 +397,6 @@ export function WorkDesk() {
             <div>
               <p className="text-sm font-medium text-accent">Daily desk</p>
               <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">Instagram Work Report</h1>
-              <p className="mt-1 max-w-xl text-sm text-muted">
-                Heading ka number khud lagta hai — jitne link section mein, utna count. Sr no 1 se chalta hai.
-              </p>
             </div>
             <div className="hidden gap-2 lg:flex">
               <ActionButtons
@@ -459,7 +456,6 @@ export function WorkDesk() {
             <div className="no-print flex flex-col gap-3">
               <div className="rounded-xl border border-line bg-surface p-3">
                 <h2 className="text-base font-semibold">UGC Videos</h2>
-                <p className="mt-1 text-sm text-muted">Follower band ke hisaab se. Khali band report mein : 0 dikhegi.</p>
               </div>
               {BUCKETS.filter((def) => def.kind === "ugc").map((def) => (
                 <BucketCard
@@ -479,7 +475,6 @@ export function WorkDesk() {
 
               <div className="rounded-xl border border-line bg-surface p-3">
                 <h2 className="text-base font-semibold">Meme aur Political</h2>
-                <p className="mt-1 text-sm text-muted">Premium alag rehta hai. Meme aur political ka count sirf bhare hue links ka hai.</p>
               </div>
               {BUCKETS.filter((def) => def.kind === "solo").map((def) => (
                 <BucketCard
