@@ -324,6 +324,7 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 61000, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeeMsDBPP1v/" } },
   { followers: 132000, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeeTf_CPOVZ/?obrf=MXJvcWNrcWpxNnBnMA==" } },
   { followers: 145000, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeeTi_qxZG7/?obrf=NzRkOG9tcWk5c3Jl" } },
+  { followers: 604000, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeeV8DeRXgX/?dlrf=MTdhZ3BzM3YzMXZxMA==" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
@@ -356,6 +357,13 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
   "2026-10-14": {
     premium: [],
     meme: [
+      "https://www.instagram.com/reel/DeeqIPkzFs6/?psln=bnV2enNyanN2Z3lo",
+      "https://www.instagram.com/reel/DeesKAvPrw4/?rpxt=azByZHJzdmc1NmRq",
+      "https://www.instagram.com/reel/DeeqfUmNr8H/?vrfl=d2J4N3oyYzlnandi",
+      "https://www.instagram.com/reel/DeerbO0yp0B/?xtok=ZmljaGttbGN1Yzhi",
+      "https://www.instagram.com/reel/DeeoJrYTGbg/?cplk=Yzc1anZ0OHcxM291",
+      "https://www.instagram.com/reel/Deen5aWsWIT/?cplk=eXgxdWVvaG5jbjI4",
+      "https://www.instagram.com/reel/Deeo2gMsirk/?srtk=MXVobWdsY3BvMmp5OA==",
       "https://www.instagram.com/reel/DeeZ53gy3-_/?obrf=NzM5aThpbzc5ZGV1",
       "https://www.instagram.com/reel/DeeXA3iMO0G/?rpxt=MWdvOGhvMnAyeGJsaA==",
       "https://www.instagram.com/reel/DeeYSSLNN-N/?vrfl=MW9nbm50Z2NlYWE4ag==",
@@ -380,10 +388,24 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DeeUqa4IlIw/",
       "https://www.instagram.com/reel/DeeX_JOzIxE/",
       "https://www.instagram.com/reel/DeeUonlyIn/",
+      "https://www.instagram.com/reel/DeeorqQzFB1/",
+      "https://www.instagram.com/reel/Deea3hWhwLR/",
       "https://www.instagram.com/reel/DeeWKUbT60S/",
+      "https://www.instagram.com/reel/DeeYtrxoDT-/",
       "https://www.instagram.com/reel/DeeWm0uSX3X/",
       "https://www.instagram.com/reel/DeeXAH7BpfB/",
-      "https://www.instagram.com/reel/DeeU1IMqrMU/"
+      "https://www.instagram.com/reel/DeegL88ScX1/",
+      "https://www.instagram.com/reel/DeeoAm3hyd7/",
+      "https://www.instagram.com/reel/DeemobBhBkT/",
+      "https://www.instagram.com/reel/DeenctRKFSZ/",
+      "https://www.instagram.com/reel/DeeU1IMqrMU/",
+      "https://www.instagram.com/reel/DeeoJQXhJiA",
+      "https://www.instagram.com/reel/Deen66iz7AF/",
+      "https://www.instagram.com/reel/DeenbYGT77G/",
+      "https://www.instagram.com/reel/DeeonDgKLhy/",
+      "https://www.instagram.com/reel/DeerB9EzdXv/?",
+      "https://www.instagram.com/reel/DeemqXLSnFQ/",
+      "https://www.instagram.com/reel/DeenTqsNkMO/"
     ],
   },
   "2026-10-10": {
