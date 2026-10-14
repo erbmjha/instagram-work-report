@@ -14,7 +14,6 @@ import {
   formatLongDate,
   freshReport,
   todayISO,
-  emptyReport,
   groupTotals,
   isInstagramUrl,
   linkTotal,
@@ -215,7 +214,7 @@ function DateField({ value, onChange }: { value: string; onChange: (iso: string)
 }
 
 export function WorkDesk() {
-  const [store, setStore] = useState<Store>(() => ({ draft: emptyReport(), saved: [] }));
+  const [store, setStore] = useState<Store>(() => ({ draft: freshReport(), saved: [] }));
   const [booted, setBooted] = useState(false);
   const [panel, setPanel] = useState<"fill" | "preview">("fill");
   const [pastes, setPastes] = useState<Partial<Record<BucketId, string>>>({});
@@ -227,9 +226,8 @@ export function WorkDesk() {
   useEffect(() => {
     const loaded = readStore();
     const base = loaded?.draft ?? freshReport();
-    const date = base.date || todayISO();
     setStore({
-      draft: applyDateLinks(base, date),
+      draft: applyDateLinks(base, todayISO()),
       saved: loaded?.saved ?? [],
     });
     setBooted(true);
