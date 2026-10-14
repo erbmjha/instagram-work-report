@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { Check, Copy, Download, FilePlus, Plus, Trash2 } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Calendar, Check, ChevronLeft, ChevronRight, Copy, Download, FilePlus, Plus, Trash2 } from "lucide-react";
 import {
   BUCKETS,
   type BucketId,
@@ -73,6 +73,145 @@ function upsertSaved(saved: Report[], report: Report): Report[] {
   const next = saved.filter((item) => item.id !== report.id);
   next.unshift({ ...report, buckets: structuredClone(report.buckets) });
   return next.slice(0, 40);
+}
+
+const WEEKDAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+function isoFromParts(year: number, month: number, day: number): string {
+  return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
+function monthStart(iso: string): Date {
+  const [year, month] = iso.split("-").map(Number);
+  if (!year || !month) {
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), 1);
+  }
+  return new Date(year, month - 1, 1);
+}
+
+function DateField({ value, onChange }: { value: string; onChange: (iso: string) => void }) {
+  const [open, setOpen] = useState(false);
+  const [cursor, setCursor] = useState(() => monthStart(value));
+  const root = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    function onPointer(event: MouseEvent) {
+      if (!root.current?.contains(event.target as Node)) setOpen(false);
+    }
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  const year = cursor.getFullYear();
+  const month = cursor.getMonth();
+  const lead = new Date(year, month, 1).getDay();
+  const count = new Date(year, month + 1, 0).getDate();
+  const cells: Array<number | null> = [...Array.from({ length: lead }, () => null), ...Array.from({ length: count }, (_, index) => index + 1)];
+  const today = todayISO();
+
+  return (
+    <div ref={root} className="relative">
+      <span className="mb-1 block text-sm font-medium">Date</span>
+      <button
+        id="report-date"
+        type="button"
+        aria-haspopup="dialog"
+        aria-expanded={open}
+        onClick={() => {
+          setCursor(monthStart(value));
+          setOpen((current) => !current);
+        }}
+        className="flex h-11 w-full items-center justify-between gap-2 rounded-md border border-ink/20 bg-paper px-3 text-left text-base outline-none focus-visible:ring-2 focus-visible:ring-accent"
+      >
+        <span className="truncate">{value ? formatLongDate(value) : "Pick a date"}</span>
+        <Calendar className="size-4 shrink-0 text-accent" aria-hidden="true" />
+      </button>
+      {open ? (
+        <div
+          role="dialog"
+          aria-label="Choose date"
+          className="absolute left-0 z-30 mt-1.5 w-72 border border-ink/25 bg-paper p-3 shadow-[4px_4px_0_rgba(28,23,18,0.12)] sm:left-auto sm:right-0"
+        >
+          <div className="flex items-center justify-between border-b border-line pb-2">
+            <button
+              type="button"
+              aria-label="Previous month"
+              onClick={() => setCursor(new Date(year, month - 1, 1))}
+              className="grid size-8 place-items-center border border-line bg-surface text-ink hover:border-ink"
+            >
+              <ChevronLeft className="size-4" aria-hidden="true" />
+            </button>
+            <p className="text-sm font-semibold tracking-wide">
+              {MONTH_NAMES[month]} {year}
+            </p>
+            <button
+              type="button"
+              aria-label="Next month"
+              onClick={() => setCursor(new Date(year, month + 1, 1))}
+              className="grid size-8 place-items-center border border-line bg-surface text-ink hover:border-ink"
+            >
+              <ChevronRight className="size-4" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="mt-2 grid grid-cols-7 text-center text-[11px] font-semibold tracking-wider text-muted uppercase">
+            {WEEKDAYS.map((day) => (
+              <span key={day} className="py-1">
+                {day}
+              </span>
+            ))}
+          </div>
+          <div className="grid grid-cols-7">
+            {cells.map((day, index) => {
+              if (!day) return <span key={`blank-${index}`} className="size-9" />;
+              const iso = isoFromParts(year, month, day);
+              const selected = iso === value;
+              const isToday = iso === today;
+              return (
+                <button
+                  key={iso}
+                  type="button"
+                  onClick={() => {
+                    onChange(iso);
+                    setOpen(false);
+                  }}
+                  className={`mx-auto grid size-9 place-items-center text-sm tabular-nums ${
+                    selected
+                      ? "bg-accent font-semibold text-accent-fg"
+                      : isToday
+                        ? "font-semibold text-accent underline decoration-2 underline-offset-4"
+                        : "hover:bg-surface"
+                  }`}
+                >
+                  {day}
+                </button>
+              );
+            })}
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              onChange(today);
+              setCursor(monthStart(today));
+              setOpen(false);
+            }}
+            className="mt-2 w-full border-t border-line pt-2 text-center text-sm font-semibold text-accent"
+          >
+            Today
+          </button>
+        </div>
+      ) : null}
+    </div>
+  );
 }
 
 export function WorkDesk() {
@@ -274,7 +413,7 @@ export function WorkDesk() {
             </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_11rem]">
+          <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_14rem]">
             <label className="block">
               <span className="mb-1 block text-sm font-medium">Campaign</span>
               <input
@@ -285,16 +424,7 @@ export function WorkDesk() {
                 className="h-11 w-full rounded-lg border border-line bg-paper px-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-accent"
               />
             </label>
-            <label className="block">
-              <span className="mb-1 block text-sm font-medium">Date</span>
-              <input
-                id="report-date"
-                type="date"
-                value={draft.date}
-                onChange={(event) => commit(applyDateLinks(draft, event.target.value))}
-                className="h-11 w-full rounded-lg border border-line bg-paper px-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              />
-            </label>
+            <DateField value={draft.date} onChange={(iso) => commit(applyDateLinks(draft, iso))} />
           </div>
 
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
