@@ -325,6 +325,8 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 132000, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeeTf_CPOVZ/?obrf=MXJvcWNrcWpxNnBnMA==" } },
   { followers: 145000, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeeTi_qxZG7/?obrf=NzRkOG9tcWk5c3Jl" } },
   { followers: 604000, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeeV8DeRXgX/?dlrf=MTdhZ3BzM3YzMXZxMA==" } },
+  { followers: 19100, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeeyW6Gh8nF/?" } },
+  { followers: 25400, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeezWLaJBj-/?" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
@@ -360,10 +362,13 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DeeqIPkzFs6/?psln=bnV2enNyanN2Z3lo",
       "https://www.instagram.com/reel/DeesKAvPrw4/?rpxt=azByZHJzdmc1NmRq",
       "https://www.instagram.com/reel/DeeqfUmNr8H/?vrfl=d2J4N3oyYzlnandi",
+      "https://www.instagram.com/reel/DeewKr7oWkb/?psln=OXM1cTE1eDFvNW5o",
       "https://www.instagram.com/reel/DeerbO0yp0B/?xtok=ZmljaGttbGN1Yzhi",
+      "https://www.instagram.com/reel/DeeugOwPW5V/?cplk=dGcyNGtxcXJ4YXZj",
       "https://www.instagram.com/reel/DeeoJrYTGbg/?cplk=Yzc1anZ0OHcxM291",
       "https://www.instagram.com/reel/Deen5aWsWIT/?cplk=eXgxdWVvaG5jbjI4",
       "https://www.instagram.com/reel/Deeo2gMsirk/?srtk=MXVobWdsY3BvMmp5OA==",
+      "https://www.instagram.com/reel/DeepCvhOHCc/?srtk=Z292bm43MTJ2bG0w",
       "https://www.instagram.com/reel/DeeZ53gy3-_/?obrf=NzM5aThpbzc5ZGV1",
       "https://www.instagram.com/reel/DeeXA3iMO0G/?rpxt=MWdvOGhvMnAyeGJsaA==",
       "https://www.instagram.com/reel/DeeYSSLNN-N/?vrfl=MW9nbm50Z2NlYWE4ag==",
