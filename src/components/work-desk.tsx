@@ -534,7 +534,6 @@ export function WorkDesk() {
 
           <section className={`paper-col ${panel === "preview" ? "block" : "hidden lg:block"}`}>
             <div className="lg:sticky lg:top-4">
-              <p className="no-print mb-2 text-sm text-muted">Preview — copy pe yahi text Google Doc mein jayega.</p>
               <Paper blocks={blocks} />
             </div>
           </section>
