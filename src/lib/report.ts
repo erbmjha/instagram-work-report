@@ -321,6 +321,9 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 3600000, byDate: { "2026-10-13": "https://www.instagram.com/reel/Deca9KDTy7Z/?" } },
   { followers: 271000, byDate: { "2026-10-13": "https://www.instagram.com/reel/Deceij0S6cT/?" } },
   { followers: 292200, byDate: { "2026-10-13": "https://www.instagram.com/reel/DedULqetKWg/" } },
+  { followers: 61000, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeeMsDBPP1v/" } },
+  { followers: 132000, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeeTf_CPOVZ/?obrf=MXJvcWNrcWpxNnBnMA==" } },
+  { followers: 145000, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeeTi_qxZG7/?obrf=NzRkOG9tcWk5c3Jl" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
@@ -350,6 +353,39 @@ export function ugcLinksForDate(iso: string): Pick<Record<BucketId, string[]>, "
 }
 
 const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; political: string[] }> = {
+  "2026-10-14": {
+    premium: [],
+    meme: [
+      "https://www.instagram.com/reel/DeeZ53gy3-_/?obrf=NzM5aThpbzc5ZGV1",
+      "https://www.instagram.com/reel/DeeXA3iMO0G/?rpxt=MWdvOGhvMnAyeGJsaA==",
+      "https://www.instagram.com/reel/DeeYSSLNN-N/?vrfl=MW9nbm50Z2NlYWE4ag==",
+      "https://www.instagram.com/reel/DeedRrLsSz5/?vrfl=MWU2cWtyeXZhb2FhdA==",
+      "https://www.instagram.com/reel/DeeX7K0tE5P/?dlrf=MW40NnZmcHl4cXo0Yg==",
+      "https://www.instagram.com/reel/DeeUhtussHV/?vrfl=MXhzc25jeTZ1NHVmeg==",
+      "https://www.instagram.com/reel/DeeUlYfTZTY/?srtk=dzE2bnM3bW1laXVy",
+      "https://www.instagram.com/reel/DeeVVZft5Fn/?cplk=MW0xZmpzOXVrazFzbQ==",
+      "https://www.instagram.com/reel/DeeU8qVvbw3/?exln=MTlkeXpzb3J1aGU2ag==",
+      "https://www.instagram.com/reel/DeeU60gBwT8/?dlrf=MWs5MnJyeWJ5cjEyNw==",
+      "https://www.instagram.com/reel/DeeVdePiqjj/?psln=MXN3dXhnNnV2Z2Fscw==",
+      "https://www.instagram.com/reel/DeeX2kLh6GL/?rpxt=czY2OHRuNDd5eHBu",
+      "https://www.instagram.com/reel/DeeVNMFPcJY/?rpxt=MWJrdjdvN20wN3E3dw==",
+      "https://www.instagram.com/reel/DeeV5YnPUJ5/?psln=MWpxcHE2bGQza3M3bw==",
+      "https://www.instagram.com/reel/DeeVqlThUoZ/?psln=cXhkZGljOGl0cmph"
+    ],
+    political: [
+      "https://www.instagram.com/reel/DeeU7D_B3d0/",
+      "https://www.instagram.com/reel/DeeXtt7oNGo/",
+      "https://www.instagram.com/reel/DeeWFZCg8L9/",
+      "https://www.instagram.com/reel/DeeU3bmOQg8/",
+      "https://www.instagram.com/reel/DeeUqa4IlIw/",
+      "https://www.instagram.com/reel/DeeX_JOzIxE/",
+      "https://www.instagram.com/reel/DeeUonlyIn/",
+      "https://www.instagram.com/reel/DeeWKUbT60S/",
+      "https://www.instagram.com/reel/DeeWm0uSX3X/",
+      "https://www.instagram.com/reel/DeeXAH7BpfB/",
+      "https://www.instagram.com/reel/DeeU1IMqrMU/"
+    ],
+  },
   "2026-10-10": {
     premium: [
       "https://www.instagram.com/reel/DeT-lI-teJb/?rpxt=d2FkYWQ4ZWNlaXRy",
