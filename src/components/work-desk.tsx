@@ -17,7 +17,6 @@ import {
   groupTotals,
   isInstagramUrl,
   linkTotal,
-  sampleReport,
   shortcode,
   toDocHtml,
   toHtml,
@@ -317,18 +316,6 @@ export function WorkDesk() {
     setPanel("fill");
   }
 
-  function loadSample() {
-    if (linkTotal(draft) > 0 || draft.campaign.trim()) {
-      const ok = window.confirm("Abhi wala report list mein save karke CJP Protest sample kholun?");
-      if (!ok) return;
-    }
-    setStore((prev) => ({
-      draft: sampleReport(),
-      saved: upsertSaved(prev.saved, prev.draft),
-    }));
-    setPanel("preview");
-  }
-
   function openSaved(id: string) {
     const found = store.saved.find((item) => item.id === id);
     if (!found) return;
@@ -489,16 +476,6 @@ export function WorkDesk() {
                   onMove={(index, to) => moveLink(def.id, index, to)}
                 />
               ))}
-
-              <div className="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  onClick={loadSample}
-                  className="h-11 rounded-lg border border-line bg-paper px-3 text-sm font-medium transition-colors duration-150 hover:bg-surface"
-                >
-                  CJP Protest sample
-                </button>
-              </div>
 
               {store.saved.length > 0 ? (
                 <details className="rounded-xl border border-line bg-surface p-3">
