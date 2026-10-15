@@ -339,6 +339,13 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 35800, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehFB7LSCPg/?" } },
   { followers: 145000, byDate: { "2026-10-15": "https://www.instagram.com/reel/Deg_pyYx_lP/?psln=cWRqc204dm9yZ2tq" } },
   { followers: 134000, byDate: { "2026-10-15": "https://www.instagram.com/reel/Deg_ATAh4KY/?xtok=Y2w0eDg3aWUwczd4" } },
+  { followers: 1600000, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehWvMWqJ0i/?srtk=MTQzOHAzYmV3eHc0aQ==" } },
+  { followers: 227000, byDate: { "2026-10-15": "https://www.instagram.com/reel/Deg9sAbOEYh/?psln=MTYzcW1xbXU5dDlocA==" } },
+  { followers: 267000, byDate: { "2026-10-15": "https://www.instagram.com/reel/Deg3iAfSsO_/?srtk=MTFkYjZiZGZrbXZsdg==" } },
+  { followers: 267000, byDate: { "2026-10-15": "https://www.instagram.com/reel/DegvpCCzXV9/?exln=a3VtaTJxam56MnZ3" } },
+  { followers: 446000, byDate: { "2026-10-15": "https://www.instagram.com/reel/Deg9ziBhvG0/?xtok=Z3BpMm1nNzk4Ynlp" } },
+  { followers: 767000, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehQSiRzRHr/?vrfl=MTcxM2dxd3l6aWFhNQ==" } },
+  { followers: 1000000, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehMeDJSnsv/?xtok=NHNzaGVudHY3ajNn" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
@@ -384,6 +391,10 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DehJp1JMK6B/",
       "https://www.instagram.com/reel/DehJS7fBSNr/",
       "https://www.instagram.com/reel/DehJI97NUKo/",
+      "https://www.instagram.com/p/DehYqRBiLAm/?cplk=MWRnaGQwMmpwMzdydA==",
+      "https://www.instagram.com/p/DehYyvljAOg/?srtk=ajVpZzZ4ZmNiOTZ6",
+      "https://www.instagram.com/p/DehYyvSjRW0/?rpxt=ZnFseGdkNnRnbXlv",
+      "https://www.instagram.com/p/DehZQIEjyPL/?obrf=MW9yOTZrZjRtbzkycw==",
       "https://www.instagram.com/reel/DehORbyNTmT/?dlrf=Mng3d21sNjNodWFm",
       "https://www.instagram.com/p/DehOXzvGoHw/?srtk=MTA1bWRwMHFya2N3bA==",
       "https://www.instagram.com/p/DehQ_rQk-CU/?rpxt=b3J3OHYxZGJ1djF1",
