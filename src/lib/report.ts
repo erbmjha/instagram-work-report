@@ -328,6 +328,10 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 19100, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeeyW6Gh8nF/?" } },
   { followers: 25400, byDate: { "2026-10-14": "https://www.instagram.com/reel/DeezWLaJBj-/?" } },
   { followers: 63400, byDate: { "2026-10-14": "https://www.instagram.com/reel/Dee8lhRynpu/?" } },
+  { followers: 84600, byDate: { "2026-10-15": "https://www.instagram.com/reel/DegljUpykpx/?" } },
+  { followers: 133000, byDate: { "2026-10-15": "https://www.instagram.com/reel/DegrPOJtC0l/?" } },
+  { followers: 107000, byDate: { "2026-10-15": "https://www.instagram.com/reel/DegxJNZxKKi/?utm_source=ig_web_copy_link&xtok=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" } },
+  { followers: 92000, byDate: { "2026-10-15": "https://www.instagram.com/p/Deg0IjIp4ZT/" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
@@ -359,7 +363,9 @@ export function ugcLinksForDate(iso: string): Pick<Record<BucketId, string[]>, "
 const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; political: string[] }> = {
   "2026-10-14": {
     premium: [
-      "https://www.instagram.com/reel/Deec3b9J7J1/?xtok=MTNiNHhzcGw0azdoNg=="
+      "https://www.instagram.com/reel/DefC7hszNx8/?dlrf=OGdhM3F2a3BsYmtj",
+      "https://www.instagram.com/reel/Deec3b9J7J1/?xtok=MTNiNHhzcGw0azdoNg==",
+      "https://www.instagram.com/reel/DegCnH5hegJ/?exln=MXd3ejd5bHlraWo5Zw=="
     ],
     meme: [
       "https://www.instagram.com/reel/DefBz6ETZOs/?dlrf=MWM1b3hoc2x1MXdmNA==",
@@ -433,9 +439,14 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DefDtNtBbDY",
       "https://www.instagram.com/reel/DefCCrHHt74/",
       "https://www.instagram.com/reel/DefBlurRs7N/",
+      "https://www.instagram.com/reel/DefDNBAS7Rs/",
       "https://www.instagram.com/reel/DeemqXLSnFQ/",
+      "https://www.instagram.com/reel/DefwR7TymFn/",
       "https://www.instagram.com/reel/DefBYAJgG7a/",
+      "https://www.instagram.com/reel/Def3PV9h1C9/?cplk=MWU1aGN6ajl0a2g1",
       "https://www.instagram.com/reel/DefBn7LE72-/",
+      "https://www.instagram.com/reel/Def-V8RI8JT/",
+      "https://www.instagram.com/reel/DeftrmKPM90/",
       "https://www.instagram.com/reel/DefEv5_hL3z/",
       "https://www.instagram.com/reel/DefCL1RzzHt/",
       "https://www.instagram.com/reel/DeenTqsNkMO/"
