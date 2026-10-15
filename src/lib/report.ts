@@ -346,6 +346,11 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 446000, byDate: { "2026-10-15": "https://www.instagram.com/reel/Deg9ziBhvG0/?xtok=Z3BpMm1nNzk4Ynlp" } },
   { followers: 767000, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehQSiRzRHr/?vrfl=MTcxM2dxd3l6aWFhNQ==" } },
   { followers: 1000000, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehMeDJSnsv/?xtok=NHNzaGVudHY3ajNn" } },
+  { followers: 525000, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehHMw7sRDv/?vrfl=MW0zanJqNndxbTExNw==" } },
+  { followers: 63400, byDate: { "2026-10-15": "https://www.instagram.com/reel/Dehb57aBUBb/?" } },
+  { followers: 292200, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehaUTLMZ4K/?" } },
+  { followers: 66200, byDate: { "2026-10-15": "https://www.instagram.com/reel/Dehiw8xT4Jg/?xtok=MWd2dDMyYWxwazJ5eQ==" } },
+  { followers: 15100, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehZDajCBOP/?xtok=MTF0MXkzbTJtc240cQ==" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
@@ -387,7 +392,9 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DehLlmUPkNp/?dlrf=ZXk5dmsxdjB2eGxl",
       "https://www.instagram.com/reel/DehL8SENc6h/?cplk=cDFyYjloNmlvdjNq",
       "https://www.instagram.com/reel/DehJJWxoAsE/",
+      "https://www.instagram.com/reel/DehaWeNy6kF/?dlrf=MWR3ajdiZTdjdXl0Mg==",
       "https://www.instagram.com/reel/DehIpVxvVhu/",
+      "https://www.instagram.com/reel/DehalnATkcV/?psln=b2x1bHl0NnJnMno0",
       "https://www.instagram.com/reel/DehJp1JMK6B/",
       "https://www.instagram.com/reel/DehJS7fBSNr/",
       "https://www.instagram.com/reel/DehJI97NUKo/",
