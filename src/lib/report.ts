@@ -351,6 +351,9 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 292200, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehaUTLMZ4K/?" } },
   { followers: 66200, byDate: { "2026-10-15": "https://www.instagram.com/reel/Dehiw8xT4Jg/?xtok=MWd2dDMyYWxwazJ5eQ==" } },
   { followers: 15100, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehZDajCBOP/?xtok=MTF0MXkzbTJtc240cQ==" } },
+  { followers: 609800, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehjVfsToHi/?" } },
+  { followers: 35600, byDate: { "2026-10-15": "https://www.instagram.com/reel/DehanjUTuE1/?" } },
+  { followers: 291000, byDate: { "2026-10-15": "https://www.instagram.com/reels/DehbiXkz7GF/" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
@@ -381,7 +384,9 @@ export function ugcLinksForDate(iso: string): Pick<Record<BucketId, string[]>, "
 
 const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; political: string[] }> = {
   "2026-10-15": {
-    premium: [],
+    premium: [
+      "https://www.instagram.com/p/Deg3AxQEzHg/?psln=MXhzeWJvaWs1YnFyNQ=="
+    ],
     meme: [
       "https://www.instagram.com/reel/DehNW0rJNbc/?vrfl=dHZzb21ia2E3YnEw",
       "https://www.instagram.com/reel/DehNCLjBaUS/?dlrf=MWR5c3hjeWw1dXBuZQ==",
