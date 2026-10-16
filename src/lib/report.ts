@@ -371,6 +371,8 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 92400, byDate: { "2026-10-16": "https://www.instagram.com/reel/DejVeZNOHuJ/?mdxt=MXN5dXRneG9ua2p0Ng==" } },
   { followers: 68000, byDate: { "2026-10-16": "https://www.instagram.com/reel/Dej5-jDs8Cg/?psln=MTA1OWp2YjVocWl1ZA==" } },
   { followers: 114000, byDate: { "2026-10-16": "https://www.instagram.com/reel/DejlYrDzh3Q/?cplk=aTUzaTl0d2F2aGVh" } },
+  { followers: 46600, byDate: { "2026-10-16": "https://www.instagram.com/reel/Dej1kZfST82/?" } },
+  { followers: 112000, byDate: { "2026-10-16": "https://www.instagram.com/reel/DejeXXzzMON/?psln=cHR3c3dvOW85dXVh" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
