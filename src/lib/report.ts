@@ -425,7 +425,11 @@ export function ugcLinksForDate(iso: string): Pick<Record<BucketId, string[]>, "
 
 const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; political: string[] }> = {
   "2026-10-18": {
-    premium: [],
+    premium: [
+      "https://www.instagram.com/reel/DepBmQGz3rU/?mdxt=MWVyaGF3OXB0ZWJ0eg==",
+      "https://www.instagram.com/reel/DepDO1nzdqh/?vrfl=NXh0YmJlenlwbnQ1",
+      "https://www.instagram.com/reel/DepGT7ojpLE/?srtk=MTMzeHFobnI0MWVicQ=="
+    ],
     meme: [
       "https://www.instagram.com/reel/Deo6IdWJU5R/?srtk=MXQ1bzY4enQzaXM5eg==",
       "https://www.instagram.com/reel/Deo7M2HBjsA/?xtok=c2Z6YXljaXVqMzRz",
@@ -486,14 +490,29 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DeooE57Abbz/",
       "https://www.instagram.com/reel/Deo3-A4hUp-/",
       "https://www.instagram.com/reel/Deo5lwqKaM3/",
+      "https://www.instagram.com/reel/Deo52e9qq8r/",
+      "https://www.instagram.com/reel/DepBO5JSUUX/",
+      "https://www.instagram.com/reel/DepBa3vTE-v/",
+      "https://www.instagram.com/reel/DepBRy_NjjH/",
       "https://www.instagram.com/reel/Deo9uZpyexd/",
+      "https://www.instagram.com/reel/DepG8rapFwb/",
+      "https://www.instagram.com/reel/DepNZD-FbZj/",
+      "https://www.instagram.com/reel/DepNdjfwfc8/",
+      "https://www.instagram.com/reel/DepO3Pgui5i/",
+      "https://www.instagram.com/reel/DepIrH1RRTg/",
+      "https://www.instagram.com/reel/DepJXTOtGjX/",
+      "https://www.instagram.com/reel/DepITldh_Ck/",
+      "https://www.instagram.com/reel/DepIhCjgrn4/",
       "https://www.instagram.com/reel/Deo5ya_Iaq-/",
       "https://www.instagram.com/reel/Deo47pUymZz/",
       "https://www.instagram.com/reel/Deo6CUEJdqR/",
       "https://www.instagram.com/reel/Deo30p2P_bG/",
       "https://www.instagram.com/reel/Deo6RYuhfm7/",
       "https://www.instagram.com/reel/Deo-WRSzxz4/",
-      "https://www.instagram.com/reel/Deo6RfyT9xP/"
+      "https://www.instagram.com/reel/DepIN_jvSKj/",
+      "https://www.instagram.com/reel/DepOp6ANBeF/",
+      "https://www.instagram.com/reel/Deo6RfyT9xP/",
+      "https://www.instagram.com/reel/DepBGVDwZZ8/"
     ],
   },
   "2026-10-17": {
