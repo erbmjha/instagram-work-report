@@ -405,6 +405,7 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 25400, byDate: { "2026-10-19": "https://www.instagram.com/reel/DerbEyZJGLS/?" } },
   { followers: 15200, byDate: { "2026-10-19": "https://www.instagram.com/reel/DerYlVdtIWk/?" } },
   { followers: 61000, byDate: { "2026-10-19": "https://www.instagram.com/reel/DerL_SLv6LD/" } },
+  { followers: 421000, byDate: { "2026-10-19": "https://www.instagram.com/reel/DerY-MZq4l9" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
@@ -499,6 +500,7 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DerWD6ih06v/",
       "https://www.instagram.com/reel/DerWG3pzqEf/",
       "https://www.instagram.com/reel/DerWGb6xHV5/",
+      "https://www.instagram.com/reel/DerglOptaiD/",
       "https://www.instagram.com/reel/DerVSx_ucdR/",
       "https://www.instagram.com/reel/DerWw3WQ6AE/",
       "https://www.instagram.com/reel/DerYMyMBuUH/",
