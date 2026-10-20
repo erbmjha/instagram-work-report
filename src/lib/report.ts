@@ -406,6 +406,7 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 15200, byDate: { "2026-10-19": "https://www.instagram.com/reel/DerYlVdtIWk/?" } },
   { followers: 61000, byDate: { "2026-10-19": "https://www.instagram.com/reel/DerL_SLv6LD/" } },
   { followers: 421000, byDate: { "2026-10-19": "https://www.instagram.com/reel/DerY-MZq4l9" } },
+  { followers: 19100, byDate: { "2026-10-19": "https://www.instagram.com/reel/DerskXnvQ4S/?" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
@@ -436,7 +437,11 @@ export function ugcLinksForDate(iso: string): Pick<Record<BucketId, string[]>, "
 
 const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; political: string[] }> = {
   "2026-10-19": {
-    premium: [],
+    premium: [
+      "https://www.instagram.com/reel/DernSmXsN6Q/?exln=MWsxa2xncm5qZWVsOQ==",
+      "https://www.instagram.com/reel/Derp_9rTslh/?vrfl=NDUyeWE0b3JxZWN2",
+      "https://www.instagram.com/reel/DerqwDslAcq/?psln=ZWN4NDdxY2FmMXh0"
+    ],
     meme: [
       "https://www.instagram.com/reel/DerTvXMpM_L/",
       "https://www.instagram.com/reel/DerUPTThJrW/",
@@ -492,6 +497,7 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DerKdTcTra6/",
       "https://www.instagram.com/reel/DerUNJ5o1Jh/",
       "https://www.instagram.com/reel/DeraFuJytTr/",
+      "https://www.instagram.com/reel/Der0W0RSxpi/?exln=NGNnaW53Yms2ajlr",
       "https://www.instagram.com/reel/DerQz9synge/",
       "https://www.instagram.com/reel/DerPqtyJX7m/",
       "https://www.instagram.com/reel/DerM9GHBTnB/",
@@ -501,6 +507,10 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DerWG3pzqEf/",
       "https://www.instagram.com/reel/DerWGb6xHV5/",
       "https://www.instagram.com/reel/DerglOptaiD/",
+      "https://www.instagram.com/reel/DerrDVIQmfD/?exln=ZTNpaHRnY3YwaWRo",
+      "https://www.instagram.com/reel/DerwW-OAeWm/?mdxt=ZXdpdzNwamwwNXBo",
+      "https://www.instagram.com/reel/DerwFcFt0qw/?xtok=eTJxcWlkbmtlbHYz",
+      "https://www.instagram.com/reel/Der0cidu7so/?vrfl=MWg3dzYzOHlpMHcxeA==",
       "https://www.instagram.com/reel/DerVSx_ucdR/",
       "https://www.instagram.com/reel/DerWw3WQ6AE/",
       "https://www.instagram.com/reel/DerYMyMBuUH/",
@@ -512,7 +522,9 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DerHBvJhtoW/",
       "https://www.instagram.com/reel/DerIiLKoWbl/",
       "https://www.instagram.com/reel/DerWK7YpMv6/",
-      "https://www.instagram.com/reel/DerLdRZIN6M/"
+      "https://www.instagram.com/reel/Der0UPot4ZH/?cplk=aWZvaWF4aXJqaGsy",
+      "https://www.instagram.com/reel/DerLdRZIN6M/",
+      "https://www.instagram.com/reel/DerYPcghlly/?srtk=MTY2c2xzMXBuc3A1eQ=="
     ],
   },
   "2026-10-18": {
