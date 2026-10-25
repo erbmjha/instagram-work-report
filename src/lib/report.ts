@@ -501,6 +501,23 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 25000, byDate: { "2026-10-24": "https://www.instagram.com/reel/De4F9iwzqup/?mdxt=MXUxbDJlcXhzZTMweg==" } },
   { followers: 14000, byDate: { "2026-10-24": "https://www.instagram.com/reel/De4XVfxivu9/?utm_source=ig_web_copy_link&cplk=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" } },
   { followers: 20000, byDate: { "2026-10-24": "https://www.instagram.com/reel/De4XUERMRtJ/?vrfl=M3RwYTBwcnJnNHRw" } },
+  { followers: 24500, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7R4tKys2r/?" } },
+  { followers: 43700, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7A8_CgySI/?" } },
+  { followers: 84200, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7AfFRATu5/?" } },
+  { followers: 38100, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7CMg1z8_i/?" } },
+  { followers: 32100, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7Lw4XSymU/?" } },
+  { followers: 49700, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7QWQguJVA/?" } },
+  { followers: 63400, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7O_aDhnFd/?" } },
+  { followers: 25400, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7LQHnyjyI/?" } },
+  { followers: 51000, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7MhTPSHLk/?" } },
+  { followers: 79900, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7GmHDPbD-/?" } },
+  { followers: 35800, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7GpocSOHd/?" } },
+  { followers: 58000, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7Dj75unZg/?c" } },
+  { followers: 38100, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7DfcyToZW/?s" } },
+  { followers: 44200, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7CYg3hTwM/?" } },
+  { followers: 82000, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7BxtEBILi/?" } },
+  { followers: 25000, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7GN8Vz-0E/?psln=MTJieW4wOXV6eGtxYQ==" } },
+  { followers: 14000, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7F7blP33u/?obrf=MW9uNnl2cGVkMmM1aQ==" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
