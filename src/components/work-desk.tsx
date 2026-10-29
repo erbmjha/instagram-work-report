@@ -255,7 +255,7 @@ export function WorkDesk() {
     const loaded = readStore();
     const base = loaded?.draft ?? freshReport();
     setStore({
-      draft: applyDateLinks(base, todayISO()),
+      draft: { ...applyDateLinks(base, todayISO()), campaign: "" },
       saved: loaded?.saved ?? [],
     });
     setBooted(true);
@@ -409,23 +409,24 @@ export function WorkDesk() {
       setSsMissing(true);
       return;
     }
-    const href = `/reports/${encodeURIComponent(file)}`;
+    const href = `/reports/${encodeURIComponent(file)}?v=${Date.now()}`;
     try {
-      let response = await fetch(href, { method: "HEAD" });
-      if (response.status === 405) response = await fetch(href);
+      const response = await fetch(href, { cache: "no-store" });
       if (!response.ok) {
         setSsMissing(true);
         return;
       }
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = file;
+      anchor.click();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1500);
+      setSsMissing(false);
     } catch {
       setSsMissing(true);
-      return;
     }
-    setSsMissing(false);
-    const anchor = document.createElement("a");
-    anchor.href = href;
-    anchor.download = file;
-    anchor.click();
   }
 
   async function downloadRange() {
@@ -453,7 +454,7 @@ export function WorkDesk() {
           missing += 1;
           continue;
         }
-        const response = await fetch(`/reports/${encodeURIComponent(file)}`);
+        const response = await fetch(`/reports/${encodeURIComponent(file)}?v=${Date.now()}`, { cache: "no-store" });
         if (!response.ok) {
           missing += 1;
           continue;
@@ -519,7 +520,7 @@ export function WorkDesk() {
                 id="campaign"
                 value={draft.campaign}
                 onChange={(event) => patch({ campaign: event.target.value })}
-                placeholder="CJP Protest"
+                placeholder="Date"
                 className="h-11 w-full rounded-lg border border-line bg-paper px-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-accent"
               />
             </label>

@@ -105,12 +105,9 @@ export function bucketHeading(id: BucketId, count: number): string {
 }
 
 export function campaignLine(report: Report): string {
-  const name = report.campaign.trim();
   const date = report.date ? formatLongDate(report.date) : "";
-  if (name && date) return `${name} [${date}]`;
-  if (date) return `[${date}]`;
-  if (name) return name;
-  return "Campaign [date]";
+  if (date) return `Date [${date}]`;
+  return "Date";
 }
 
 export function linkTotal(report: Report): number {
