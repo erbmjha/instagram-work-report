@@ -681,7 +681,7 @@ export function WorkDesk() {
             className="flex h-11 items-center justify-center gap-1 rounded-lg border border-line bg-paper px-2.5 text-sm font-medium"
           >
             <FileImage className="size-4" aria-hidden="true" />
-            {ssMissing ? "No SS" : "SS"}
+            {ssMissing ? "No SS" : "SS Report"}
           </button>
           <button
             type="button"
@@ -732,7 +732,7 @@ function ActionButtons({
         className="flex h-11 items-center gap-2 rounded-lg border border-line bg-paper px-3 text-sm font-medium"
       >
         <FileImage className="size-4" aria-hidden="true" />
-        {ssMissing ? "No SS" : "SS"}
+        {ssMissing ? "No SS" : "SS Report"}
       </button>
       <button
         type="button"
