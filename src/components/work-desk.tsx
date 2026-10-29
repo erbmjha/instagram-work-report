@@ -10,6 +10,7 @@ import {
   buildBlocks,
   duplicateCodes,
   extractUrls,
+  emptyReport,
   fileSlug,
   formatLongDate,
   freshReport,
@@ -87,6 +88,19 @@ function isoFromParts(year: number, month: number, day: number): string {
   return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 }
 
+function datesInRange(from: string, to: string): string[] {
+  const start = from <= to ? from : to;
+  const end = from <= to ? to : from;
+  const dates: string[] = [];
+  const cursor = new Date(`${start}T00:00:00`);
+  const last = new Date(`${end}T00:00:00`);
+  while (cursor <= last && dates.length < 45) {
+    dates.push(isoFromParts(cursor.getFullYear(), cursor.getMonth(), cursor.getDate()));
+    cursor.setDate(cursor.getDate() + 1);
+  }
+  return dates;
+}
+
 function monthStart(iso: string): Date {
   const [year, month] = iso.split("-").map(Number);
   if (!year || !month) {
@@ -96,7 +110,7 @@ function monthStart(iso: string): Date {
   return new Date(year, month - 1, 1);
 }
 
-function DateField({ value, onChange }: { value: string; onChange: (iso: string) => void }) {
+function DateField({ label = "Date", value, onChange }: { label?: string; value: string; onChange: (iso: string) => void }) {
   const [open, setOpen] = useState(false);
   const [cursor, setCursor] = useState(() => monthStart(value));
   const root = useRef<HTMLDivElement>(null);
@@ -126,7 +140,7 @@ function DateField({ value, onChange }: { value: string; onChange: (iso: string)
 
   return (
     <div ref={root} className="relative">
-      <span className="mb-1 block text-sm font-medium">Date</span>
+      <span className="mb-1 block text-sm font-medium">{label}</span>
       <button
         id="report-date"
         type="button"
@@ -229,6 +243,9 @@ export function WorkDesk() {
   const [copyError, setCopyError] = useState(false);
   const [savedFlash, setSavedFlash] = useState(false);
   const [ssMissing, setSsMissing] = useState(false);
+  const [rangeFrom, setRangeFrom] = useState(() => `${todayISO().slice(0, 8)}01`);
+  const [rangeTo, setRangeTo] = useState(todayISO);
+  const [rangeNote, setRangeNote] = useState("");
 
   useEffect(() => {
     setSsMissing(false);
@@ -411,6 +428,40 @@ export function WorkDesk() {
     anchor.click();
   }
 
+  function downloadRange() {
+    const dates = datesInRange(rangeFrom, rangeTo);
+    const spanStart = rangeFrom <= rangeTo ? rangeFrom : rangeTo;
+    const spanEnd = rangeFrom <= rangeTo ? rangeTo : rangeFrom;
+    const startDate = new Date(`${spanStart}T00:00:00`);
+    const endDate = new Date(`${spanEnd}T00:00:00`);
+    const days = Math.round((endDate.getTime() - startDate.getTime()) / 86400000) + 1;
+    if (days > 45) {
+      setRangeNote("Pick 45 days or less");
+      return;
+    }
+    const reports = dates
+      .map((iso) => applyDateLinks({ ...emptyReport(), id: "range", campaign: draft.campaign, date: iso }, iso))
+      .filter((report) => linkTotal(report) > 0);
+    if (reports.length === 0) {
+      setRangeNote("No links in this range");
+      return;
+    }
+    setRangeNote("");
+    const body = reports
+      .map((report) => toHtml(report))
+      .join('<hr style="margin:28px 0;border:none;border-top:1px solid #cccccc">');
+    const title = `Instagram Work Report ${reports[0].date} to ${reports[reports.length - 1].date}`;
+    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>${title}</title></head><body>${body}</body></html>`;
+    const blob = new Blob([html], { type: "application/msword" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    const slug = (draft.campaign.trim() || "report").replace(/[^\w]+/g, "-").replace(/^-|-$/g, "") || "report";
+    anchor.href = url;
+    anchor.download = `Instagram-Work-Report-${slug}-${reports[0].date}-to-${reports[reports.length - 1].date}.doc`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+  }
+
   return (
     <main className="min-h-screen bg-bg text-ink">
       <div className="mx-auto max-w-6xl px-4 pt-5 pb-28 lg:pb-10">
@@ -447,6 +498,34 @@ export function WorkDesk() {
             </label>
             <DateField value={draft.date} onChange={(iso) => commit(applyDateLinks(draft, iso))} />
           </div>
+
+          <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto] sm:items-end">
+            <DateField
+              label="From"
+              value={rangeFrom}
+              onChange={(iso) => {
+                setRangeNote("");
+                setRangeFrom(iso);
+              }}
+            />
+            <DateField
+              label="To"
+              value={rangeTo}
+              onChange={(iso) => {
+                setRangeNote("");
+                setRangeTo(iso);
+              }}
+            />
+            <button
+              type="button"
+              onClick={downloadRange}
+              className="flex h-11 items-center gap-2 rounded-lg border border-line bg-paper px-3 text-sm font-medium"
+            >
+              <Download className="size-4" aria-hidden="true" />
+              Range
+            </button>
+          </div>
+          {rangeNote ? <p className="text-sm text-muted">{rangeNote}</p> : null}
 
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
             <Stat label="Total" value={totals.total} />
