@@ -10,7 +10,6 @@ import {
   buildBlocks,
   duplicateCodes,
   extractUrls,
-  emptyReport,
   fileSlug,
   formatLongDate,
   freshReport,
@@ -246,6 +245,7 @@ export function WorkDesk() {
   const [rangeFrom, setRangeFrom] = useState(() => `${todayISO().slice(0, 8)}01`);
   const [rangeTo, setRangeTo] = useState(todayISO);
   const [rangeNote, setRangeNote] = useState("");
+  const [rangeBusy, setRangeBusy] = useState(false);
 
   useEffect(() => {
     setSsMissing(false);
@@ -428,7 +428,8 @@ export function WorkDesk() {
     anchor.click();
   }
 
-  function downloadRange() {
+  async function downloadRange() {
+    if (rangeBusy) return;
     const dates = datesInRange(rangeFrom, rangeTo);
     const spanStart = rangeFrom <= rangeTo ? rangeFrom : rangeTo;
     const spanEnd = rangeFrom <= rangeTo ? rangeTo : rangeFrom;
@@ -439,27 +440,53 @@ export function WorkDesk() {
       setRangeNote("Pick 45 days or less");
       return;
     }
-    const reports = dates
-      .map((iso) => applyDateLinks({ ...emptyReport(), id: "range", campaign: draft.campaign, date: iso }, iso))
-      .filter((report) => linkTotal(report) > 0);
-    if (reports.length === 0) {
-      setRangeNote("No links in this range");
-      return;
+    setRangeBusy(true);
+    setRangeNote("Joining screenshot reports…");
+    try {
+      const { PDFDocument } = await import("pdf-lib");
+      const merged = await PDFDocument.create();
+      const found: string[] = [];
+      let missing = 0;
+      for (const iso of dates) {
+        const file = screenshotFile(iso);
+        if (!file) {
+          missing += 1;
+          continue;
+        }
+        const response = await fetch(`/reports/${encodeURIComponent(file)}`);
+        if (!response.ok) {
+          missing += 1;
+          continue;
+        }
+        const source = await PDFDocument.load(await response.arrayBuffer());
+        const pages = await merged.copyPages(source, source.getPageIndices());
+        for (const page of pages) merged.addPage(page);
+        found.push(iso);
+      }
+      if (found.length === 0) {
+        setRangeNote("No screenshot report in this range");
+        return;
+      }
+      const saved = await merged.save();
+      const copy = new Uint8Array(saved.byteLength);
+      copy.set(saved);
+      const blob = new Blob([copy.buffer], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      const labelOf = (iso: string) => screenshotFile(iso)!.slice("Report [".length, -"]- Insta UGC and Posting.pdf".length);
+      anchor.href = url;
+      anchor.download =
+        found.length === 1
+          ? screenshotFile(found[0])!
+          : `Report [${labelOf(found[0])} to ${labelOf(found[found.length - 1])}]- Insta UGC and Posting.pdf`;
+      anchor.click();
+      URL.revokeObjectURL(url);
+      setRangeNote(missing ? `${found.length} days joined, ${missing} had no SS` : `${found.length} days joined`);
+    } catch {
+      setRangeNote("Could not join the screenshot reports");
+    } finally {
+      setRangeBusy(false);
     }
-    setRangeNote("");
-    const body = reports
-      .map((report) => toHtml(report))
-      .join('<hr style="margin:28px 0;border:none;border-top:1px solid #cccccc">');
-    const title = `Instagram Work Report ${reports[0].date} to ${reports[reports.length - 1].date}`;
-    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>${title}</title></head><body>${body}</body></html>`;
-    const blob = new Blob([html], { type: "application/msword" });
-    const url = URL.createObjectURL(blob);
-    const anchor = document.createElement("a");
-    const slug = (draft.campaign.trim() || "report").replace(/[^\w]+/g, "-").replace(/^-|-$/g, "") || "report";
-    anchor.href = url;
-    anchor.download = `Instagram-Work-Report-${slug}-${reports[0].date}-to-${reports[reports.length - 1].date}.doc`;
-    anchor.click();
-    URL.revokeObjectURL(url);
   }
 
   return (
@@ -519,10 +546,11 @@ export function WorkDesk() {
             <button
               type="button"
               onClick={downloadRange}
-              className="flex h-11 items-center gap-2 rounded-lg border border-line bg-paper px-3 text-sm font-medium"
+              disabled={rangeBusy}
+              className="flex h-11 items-center gap-2 rounded-lg border border-line bg-paper px-3 text-sm font-medium disabled:opacity-60"
             >
-              <Download className="size-4" aria-hidden="true" />
-              Range
+              <FileImage className="size-4" aria-hidden="true" />
+              {rangeBusy ? "Joining" : "SS range"}
             </button>
           </div>
           {rangeNote ? <p className="text-sm text-muted">{rangeNote}</p> : null}
