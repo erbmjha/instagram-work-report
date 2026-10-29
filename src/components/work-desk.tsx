@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Calendar, Check, ChevronLeft, ChevronRight, Copy, Download, FilePlus, Plus, Trash2 } from "lucide-react";
+import { Calendar, Check, ChevronLeft, ChevronRight, Copy, Download, FileImage, FilePlus, Plus, Trash2 } from "lucide-react";
 import {
   BUCKETS,
   type BucketId,
@@ -24,6 +24,13 @@ import {
 } from "@/lib/report";
 
 const STORAGE_KEY = "ig-work-report-desk-v1";
+const MONTH_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function screenshotFile(iso: string): string | null {
+  const [year, month, day] = iso.split("-").map(Number);
+  if (!year || !month || !day || month < 1 || month > 12) return null;
+  return `Report [${day} ${MONTH_SHORT[month - 1]} ${year}]- Insta UGC and Posting.pdf`;
+}
 
 type Store = { draft: Report; saved: Report[] };
 
@@ -221,6 +228,11 @@ export function WorkDesk() {
   const [copied, setCopied] = useState(false);
   const [copyError, setCopyError] = useState(false);
   const [savedFlash, setSavedFlash] = useState(false);
+  const [ssMissing, setSsMissing] = useState(false);
+
+  useEffect(() => {
+    setSsMissing(false);
+  }, [store.draft.date]);
 
   useEffect(() => {
     const loaded = readStore();
@@ -374,6 +386,31 @@ export function WorkDesk() {
     URL.revokeObjectURL(url);
   }
 
+  async function downloadScreenshot() {
+    const file = screenshotFile(draft.date);
+    if (!file) {
+      setSsMissing(true);
+      return;
+    }
+    const href = `/reports/${encodeURIComponent(file)}`;
+    try {
+      let response = await fetch(href, { method: "HEAD" });
+      if (response.status === 405) response = await fetch(href);
+      if (!response.ok) {
+        setSsMissing(true);
+        return;
+      }
+    } catch {
+      setSsMissing(true);
+      return;
+    }
+    setSsMissing(false);
+    const anchor = document.createElement("a");
+    anchor.href = href;
+    anchor.download = file;
+    anchor.click();
+  }
+
   return (
     <main className="min-h-screen bg-bg text-ink">
       <div className="mx-auto max-w-6xl px-4 pt-5 pb-28 lg:pb-10">
@@ -387,7 +424,9 @@ export function WorkDesk() {
               <ActionButtons
                 copied={copied}
                 savedFlash={savedFlash}
+                ssMissing={ssMissing}
                 onCopy={copyReport}
+                onScreenshot={downloadScreenshot}
                 onDownload={downloadDoc}
                 onSave={saveCopy}
                 onNew={startNew}
@@ -530,6 +569,15 @@ export function WorkDesk() {
           </button>
           <button
             type="button"
+            onClick={downloadScreenshot}
+            aria-label={ssMissing ? "No screenshot report for this date" : "Download screenshot report"}
+            className="flex h-11 items-center justify-center gap-1 rounded-lg border border-line bg-paper px-2.5 text-sm font-medium"
+          >
+            <FileImage className="size-4" aria-hidden="true" />
+            {ssMissing ? "No SS" : "SS"}
+          </button>
+          <button
+            type="button"
             onClick={downloadDoc}
             aria-label="Download doc"
             className="flex size-11 items-center justify-center rounded-lg border border-line bg-paper"
@@ -545,14 +593,18 @@ export function WorkDesk() {
 function ActionButtons({
   copied,
   savedFlash,
+  ssMissing,
   onCopy,
+  onScreenshot,
   onDownload,
   onSave,
   onNew,
 }: {
   copied: boolean;
   savedFlash: boolean;
+  ssMissing: boolean;
   onCopy: () => void;
+  onScreenshot: () => void;
   onDownload: () => void;
   onSave: () => void;
   onNew: () => void;
@@ -566,6 +618,14 @@ function ActionButtons({
       >
         {copied ? <Check className="size-4" aria-hidden="true" /> : <Copy className="size-4" aria-hidden="true" />}
         {copied ? "Copied" : "Copy report"}
+      </button>
+      <button
+        type="button"
+        onClick={onScreenshot}
+        className="flex h-11 items-center gap-2 rounded-lg border border-line bg-paper px-3 text-sm font-medium"
+      >
+        <FileImage className="size-4" aria-hidden="true" />
+        {ssMissing ? "No SS" : "SS"}
       </button>
       <button
         type="button"
