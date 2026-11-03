@@ -651,6 +651,7 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 49700, byDate: { "2026-11-01": "https://www.instagram.com/reel/DfNXUm-O62L/?" } },
   { followers: 52500, byDate: { "2026-11-01": "https://www.instagram.com/reel/DfNUZSsTg9d/?" } },
   { followers: 200, byDate: { "2026-11-01": "https://www.instagram.com/reel/DfOlYPiBtjs/?rpxt=Mnk4bXJ1cWplM2c2" } },
+  { followers: 200, byDate: { "2026-11-01": "https://www.instagram.com/reel/DfO0Fkfhzau" } },
   { followers: 7300, byDate: { "2026-11-01": "https://www.instagram.com/reel/DfMfeH3RNs6/?vrfl=MXAzN29mMWNzZHFybA==" } },
   { followers: 12000, byDate: { "2026-11-01": "https://www.instagram.com/reel/DfMoPq1K4F8/?dlrf=dHZkMmZzbmF0MTht" } },
   { followers: 25000, byDate: { "2026-11-01": "https://www.instagram.com/reel/DfMjIqmzuGl/?rpxt=cHdrcHp2NnRqeWE0" } },
