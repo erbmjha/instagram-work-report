@@ -3121,6 +3121,7 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
   "2026-10-11": {
     premium: [
       "https://www.instagram.com/reel/DeWP88jveY1/?rpxt=dmllNm5mYTl1aGFq",
+      "https://www.instagram.com/p/DeW4xislIwJ/?exln=aHIxYXA2eXplM3Ro",
       "https://www.instagram.com/reel/DeW81m0TI2TS1sov8uKXluWGuPeZlBi46tBNgc0/?dlrf=dng2ODF0bWxrMjk="
     ],
     meme: [
