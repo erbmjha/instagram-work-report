@@ -689,7 +689,7 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 22100, byDate: { "2026-11-03": "https://www.instagram.com/reel/DfTu74Ot9gP/?s" } },
   { followers: 4393, byDate: { "2026-11-04": "https://www.instagram.com/reel/DfUkfO-Mhbv/?" } },
   { followers: 11000, byDate: { "2026-11-04": "https://www.instagram.com/reel/DfSCbrOP49A/?" } },
-  { followers: 24200, byDate: { "2026-11-04": "https://www.instagram.com/reel/DfUkDB8zELe/?" } },
+  { followers: 24200, byDate: { "2026-11-04": "https://www.instagram.com/reel/DfUkFGHzELe/?" } },
   { followers: 10100, byDate: { "2026-11-04": "https://www.instagram.com/reel/DfUJVHST69S/?" } },
   { followers: 12000, byDate: { "2026-11-04": "https://www.instagram.com/reel/DfUp0ZJuXCs/?" } },
   { followers: 11900, byDate: { "2026-11-04": "https://www.instagram.com/reel/DfUU8TXzuty/" } },
@@ -742,7 +742,6 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 17500, byDate: { "2026-11-08": "https://www.instagram.com/reel/Dfe7U0to8db/" } },
   { followers: 8970, byDate: { "2026-11-08": "https://www.instagram.com/reel/Dfe8JknT0dJ/?" } },
   { followers: 13900, byDate: { "2026-11-08": "https://www.instagram.com/reel/DfeguoBp1MH/?" } },
-  { followers: 38100, byDate: { "2026-10-11": "https://www.instagram.com/reel/De7DfcyToZW/?srtk=Y29leXR4cTk0MnBr" } },
   { followers: 132000, byDate: { "2026-10-15": "https://www.instagram.com/reel/Deg-_9NIv-8/" } },
   { followers: 15100, byDate: { "2026-10-20": "https://www.instagram.com/reel/DeuUKbxoqsS/?" } },
   { followers: 44200, byDate: { "2026-10-20": "https://www.instagram.com/reel/DeuWayGso4V/?" } },
@@ -752,7 +751,6 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 35800, byDate: { "2026-10-20": "https://www.instagram.com/reel/DeuaehdS0Ej/?" } },
   { followers: 43500, byDate: { "2026-10-20": "https://www.instagram.com/reel/DeuYQ9lTLAf/?" } },
   { followers: 46600, byDate: { "2026-10-20": "https://www.instagram.com/reel/DeuMm1nte97/?" } },
-  { followers: 58000, byDate: { "2026-10-25": "https://www.instagram.com/reel/De7Dj75unZg/?" } },
   { followers: 7300, byDate: { "2026-11-08": "https://www.instagram.com/reel/DfehftBxWgk/?psln=MWpidDNzZnZoMWNwNw==" } },
   { followers: 12000, byDate: { "2026-11-08": "https://www.instagram.com/reel/Dfen0MeqCvg/?exln=MTBtcmJuMWtqdTY2NA==" } },
   { followers: 19700, byDate: { "2026-11-09": "https://www.instagram.com/reels/Dfg6fr6mSS3/" } },
@@ -761,7 +759,6 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 19900, byDate: { "2026-11-09": "https://www.instagram.com/reels/Dfg8AIxiLuH/" } },
   { followers: 18000, byDate: { "2026-11-09": "https://www.instagram.com/reels/Dfg95qOBo_2/" } },
   { followers: 14800, byDate: { "2026-11-09": "https://www.instagram.com/reels/DfhEVlVzgm_/" } },
-  { followers: 10600, byDate: { "2026-11-09": "https://www.instagram.com/reel/Dfeu3m_TqB3/?" } },
   { followers: 11900, byDate: { "2026-11-09": "https://www.instagram.com/reels/DfhcaPlTTCU/" } },
   { followers: 11000, byDate: { "2026-11-09": "https://www.instagram.com/reel/DfhbpG1vseq/?" } },
   { followers: 17500, byDate: { "2026-11-09": "https://www.instagram.com/reels/Dfha4_NBrhC/" } },
@@ -826,6 +823,9 @@ const ROSTER: { followers: number; byDate: Record<string, string> }[] = [
   { followers: 16000, byDate: { "2026-11-09": "https://www.instagram.com/reel/DfhwQ2dvR6p/?mdxt=MWV2cnVhem0ybjJlaA==" } },
   { followers: 10000, byDate: { "2026-11-09": "https://www.instagram.com/reel/DfhfOmxTAUp/?cplk=cGVwdTUwdGFpODgz" } },
   { followers: 5000, byDate: { "2026-11-09": "https://www.instagram.com/reel/DfhxwxhJk3F/?vrfl=MWl5M3A3N244NGJqcw==" } },
+  { followers: 10600, byDate: { "2026-11-09": "https://www.instagram.com/reel/Dfhix51TpnR/?" } },
+  { followers: 11000, byDate: { "2026-11-09": "https://www.instagram.com/reel/DfhbpG1vseq/?" } },
+  { followers: 19000, byDate: { "2026-11-09": "https://www.instagram.com/p/Dfh_FnqSQiJ/" } },
 ];
 
 function bucketForFollowers(followers: number): "lt20" | "band20" | "band50" | "band100" | "band200" | "band500" {
@@ -864,7 +864,13 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/p/Dfhpy7mGTja/?obrf=MW9xc2NtdXJzcW1jbw==",
       "https://www.instagram.com/p/DfhpsUBEiMA/?obrf=bjNpNTdrbDNjbmtp",
       "https://www.instagram.com/reel/Dfh1gFmSMQk/?xtok=aTdwdHo0YTF4eGMx",
-      "https://www.instagram.com/p/Dfh3X0NGUmj/?img_index=3&mdxt=MXgyMjZobWE0eTVvbQ=="
+      "https://www.instagram.com/p/Dfh3X0NGUmj/?img_index=3&mdxt=MXgyMjZobWE0eTVvbQ==",
+      "https://www.instagram.com/p/Dfh9Az5iNhJ/?cplk=MWFweTh2NnUwanVnZg==",
+      "https://www.instagram.com/p/Dfh8pBmjaiX/?srtk=MWJnaDVveXQzaTQwdw==",
+      "https://www.instagram.com/p/Dfh917FCLXi/?obrf=MXF0NWR1MGl1ZGkxNQ==",
+      "https://www.instagram.com/p/Dfh-FYdEs41/?exln=MWF1MGpibnd6anJ5cQ==",
+      "https://www.instagram.com/reel/Dfh-2jJip5b/?obrf=amYzNXBrMWZsY3Jx",
+      "https://www.instagram.com/p/DfiB2gDEn3y/?img_index=3&exln=MTdhZHI0bnBtbnEwcg=="
     ],
     meme: [
       "https://www.instagram.com/reel/Dfh0OC9z_he/?cplk=eDFqazd3NjRlcTQ4",
@@ -941,7 +947,13 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/DfhoKFMP5XD/",
       "https://www.instagram.com/reel/Dfhn-fSt1iF/",
       "https://www.instagram.com/reel/DfhSzg-zp1H/",
-      "https://www.instagram.com/reel/DfhjZbkhlM6/"
+      "https://www.instagram.com/reel/DfhjZbkhlM6/",
+      "https://www.instagram.com/reel/Dfh7qw-y6z8/",
+      "https://www.instagram.com/reel/Dfh8AGTS9T0/",
+      "https://www.instagram.com/reel/Dfhz_zGA0EK/",
+      "https://www.instagram.com/reel/Dfhr1xYIjX1/",
+      "https://www.instagram.com/reel/Dfh94OlhFgT/",
+      "https://www.instagram.com/reel/Dfh-l68Evng/"
     ]
   },
   "2026-11-08": {
