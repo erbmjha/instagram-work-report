@@ -268,6 +268,23 @@ export function WorkDesk() {
 
   const draft = store.draft;
   const totals = groupTotals(draft);
+  const rangeTotals = useMemo(() => {
+    const sum = { total: 0, ugc: 0, premium: 0, meme: 0, political: 0 };
+    const start = rangeFrom <= rangeTo ? rangeFrom : rangeTo;
+    const end = rangeFrom <= rangeTo ? rangeTo : rangeFrom;
+    const cursor = new Date(`${start}T00:00:00`);
+    const last = new Date(`${end}T00:00:00`);
+    for (let guard = 0; cursor <= last && guard < 400; guard++) {
+      const day = groupTotals(applyDateLinks(draft, isoFromParts(cursor.getFullYear(), cursor.getMonth(), cursor.getDate())));
+      sum.total += day.total;
+      sum.ugc += day.ugc;
+      sum.premium += day.premium;
+      sum.meme += day.meme;
+      sum.political += day.political;
+      cursor.setDate(cursor.getDate() + 1);
+    }
+    return sum;
+  }, [draft, rangeFrom, rangeTo]);
   const dupes = useMemo(() => duplicateCodes(draft), [draft]);
   const blocks = useMemo(() => buildBlocks(draft), [draft]);
 
@@ -557,11 +574,11 @@ export function WorkDesk() {
           {rangeNote ? <p className="text-sm text-muted">{rangeNote}</p> : null}
 
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
-            <Stat label="Total" value={totals.total} />
-            <Stat label="UGC" value={totals.ugc} />
-            <Stat label="Premium" value={totals.premium} />
-            <Stat label="Meme" value={totals.meme} />
-            <Stat label="Political" value={totals.political} />
+            <Stat label="Total" value={rangeTotals.total} />
+            <Stat label="UGC" value={rangeTotals.ugc} />
+            <Stat label="Premium" value={rangeTotals.premium} />
+            <Stat label="Meme" value={rangeTotals.meme} />
+            <Stat label="Political" value={rangeTotals.political} />
           </div>
 
           {dupes.size > 0 ? (
