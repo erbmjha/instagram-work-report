@@ -784,6 +784,14 @@ export function ugcLinksForDate(iso: string): Pick<Record<BucketId, string[]>, "
 }
 
 const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; political: string[] }> = {
+  "2026-11-09": {
+    premium: [
+      "https://www.instagram.com/p/DfhgnymIQM9/?mdxt=Mm1qZTF6MDEycHd5",
+      "https://www.instagram.com/p/DfhlidwAfsf/?obrf=NWozY2pqbnZxbHVz"
+    ],
+    meme: [],
+    political: []
+  },
   "2026-11-08": {
     premium: [],
     meme: [
