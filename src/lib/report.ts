@@ -1871,7 +1871,9 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
     premium: [
       "https://www.instagram.com/reel/De9fX0gvxfa/?vrfl=aGl4MTN6M29vMDds",
       "https://www.instagram.com/reel/De9Z2x6Tskh/?dlrf=Y3RzaWUydjZ3eDA1",
-      "https://www.instagram.com/reel/De92do9SJS5/?rpxt=Mzlkb3Ftbmc1YzF0"
+      "https://www.instagram.com/reel/De92do9SJS5/?rpxt=Mzlkb3Ftbmc1YzF0",
+      "https://www.instagram.com/reel/De_28dwzOww/?vrfl=MTF0MzBxeTV0YnNldw==",
+      "https://www.instagram.com/reel/DfBtLsCRq-4/?exln=OHdyYzAyM2ptaHI3"
     ],
     meme: [
       "https://www.instagram.com/reel/De9wAmjzF-_/?xtok=czBrNnEwY3gxem1i",
@@ -1963,7 +1965,7 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
       "https://www.instagram.com/reel/De9Fz2DPBlR/?obrf=MTlpaDhsaDU5dHA2cQ==",
       "https://www.instagram.com/reel/De9E1SBzrmZ/?psln=ZjI3bDZpNnU0dXcy",
       "https://www.instagram.com/reel/De89lSBttY5/?cplk=OGp3NGt6OW5neTA5",
-      "https://www.instagram.com/reel/De9cdGtR_kz/?rpxt=MWJ2ZDY3dmR3azZhbg=="
+      "https://www.instagram.com/reel/De89ZFLxaAV/?vrfl=MXUwMmcxZ2wwZ204Yg=="
     ],
     meme: [
       "https://www.instagram.com/reel/De7L30tzxBg/?vrfl=cmh4ajF6MDIwZWJs",
@@ -2052,7 +2054,9 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
   },
   "2026-10-24": {
     premium: [
-      "https://www.instagram.com/p/De4YeDjmiai/?img_index=3&rpxt=aDc1dGVvMnFiNTVo"
+      "https://www.instagram.com/p/De4YeDjmiai/?img_index=3&rpxt=aDc1dGVvMnFiNTVo",
+      "https://www.instagram.com/reel/De6bJ7AsTRH/?cplk=MTAzNXg5MWE1aGdydQ==",
+      "https://www.instagram.com/p/De655W8E1qu/?xtok=MTY2ZjhlNnY4a3I5cQ=="
     ],
     meme: [
       "https://www.instagram.com/reel/De4lhqkyeWQ/?mdxt=YjNzb3o0dm9yNHNs",
@@ -3117,7 +3121,6 @@ const SOLO_BY_DATE: Record<string, { premium: string[]; meme: string[]; politica
   "2026-10-11": {
     premium: [
       "https://www.instagram.com/reel/DeWP88jveY1/?rpxt=dmllNm5mYTl1aGFq",
-      "https://www.instagram.com/reel/DeW7T3ppHnP/?exln=MWxuazc0NmJweHE5eg==",
       "https://www.instagram.com/reel/DeW81m0TI2TS1sov8uKXluWGuPeZlBi46tBNgc0/?dlrf=dng2ODF0bWxrMjk="
     ],
     meme: [
